@@ -7,6 +7,8 @@ services:
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD=${SPLUNK_PASSWORD}
+      - DOCKER_USERNAME=${DOCKER_USERNAME}
+      - DOCKER_PASSWORD=${DOCKER_PASSWORD}
     ports:
       - "8000:8000" # Splunk Web
       - "8088:8088" # HTTP Event Collector
@@ -22,6 +24,8 @@ services:
     environment:
       - SPLUNK_PASSWORD=${FORWARDER_PASSWORD}
       - SPLUNK_START_ARGS=--accept-license
+      - DOCKER_USERNAME=${DOCKER_USERNAME}
+      - DOCKER_PASSWORD=${DOCKER_PASSWORD}
     volumes:
       - uf-data:/opt/splunkforwarder/var
       - uf-etc:/opt/splunkforwarder/etc
