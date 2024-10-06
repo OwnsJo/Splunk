@@ -11,6 +11,7 @@ services:
       - "9000:8000" # Splunk Web
       - "9099:8088" # HTTP Event Collector
       - "9997:9997" # Splunk Indexing Port
+      - "514:514" # UniFi
     volumes:
       - splunk-data:/opt/splunk/var
       - splunk-etc:/opt/splunk/etc
